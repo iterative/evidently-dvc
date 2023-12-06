@@ -1,4 +1,4 @@
-# Tutorial: Build Data validation and Model Monitoring pipelines with DVC and Evidently
+# Tutorial: Automate Data Validation and Model Monitoring Pipelines with DVC and Evidently
 ![DVC + Evidently](static/preview.png "preview")
 
 ## Create virtual environment
@@ -6,8 +6,8 @@
 Create virtual environment named `.venv` and install python libraries
 ```bash
 python3 -m venv .venv
-echo "export PYTHONPATH=$PWD" >> .venv/bin/activate
 source .venv/bin/activate
+echo "export PYTHONPATH=$PWD" >> .venv/bin/activate
 pip install --upgrade pip setuptools wheel
 pip install -r requirements.txt
 ```

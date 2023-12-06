@@ -35,7 +35,7 @@ def monitoring(config_path: Text) -> None:
     REPORTS_DIR.mkdir(exist_ok=True)
 
     reference_data_path: Path = Path(config["monitoring"]["reference_data"])
-    reference: pd.DataFrame = pd.read_csv(reference_data_path, index_col="dteday").reset_index()
+    reference: pd.DataFrame = pd.read_csv(reference_data_path)
     current_data_path: Path = PREDICTIONS_DIR / f"{WEEK_START}--{WEEK_END}.csv"
     current: pd.DataFrame = pd.read_csv(current_data_path, index_col="dteday")
     current = current.loc[WEEK_START:WEEK_END].reset_index()

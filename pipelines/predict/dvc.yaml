@@ -4,7 +4,6 @@ stages:
     vars:
       - PIPELINE_DIR: pipelines/predict
     cmd: python src/stages/predict.py --config=${PIPELINE_DIR}/params.yaml
-    # cmd: python ${base.workdir}/src/stages/predict.py --config=params.yaml
     wdir: ../..
     params:
       - ${PIPELINE_DIR}/params.yaml:

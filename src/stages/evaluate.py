@@ -75,23 +75,22 @@ def evaluate(config_path: Text, pdir: Text) -> None:
         column_mapping=column_mapping,
     )
     
+    # Save reports in HTML format
+    model_performance_report_path = REPORTS_DIR / "model_performance.html"
+    model_performance_report.save_html(str(model_performance_report_path))
+    
     logging.info("Extract metrics")
-    print(model_performance_report.as_dict())
+    # print(model_performance_report.as_dict())
     regression_metrics: Dict = model_performance_report.as_dict()['metrics'][0]['result']["current"]
     metric_names = ['r2_score', 'rmse', 'mean_error', 'mean_abs_error', 'mean_abs_perc_error']
     selected_metrics = {k: regression_metrics.get(k) for k in metric_names} 
     
     logging.info("Save evaluation metrics and model report")
-    with Live(dir=REPORTS_DIR, 
-              save_dvc_exp=False, 
+    with Live(dir=str(REPORTS_DIR), 
+            #   save_dvc_exp=False, 
               dvcyaml=f"{pdir}/dvc.yaml",) as live:
 
-        # Log metrics 
         [live.log_metric(k, v, plot=False) for k,v in selected_metrics.items()]
-
-        # Save reports in HTML format
-        model_performance_report_path = REPORTS_DIR / "model_performance.html"
-        model_performance_report.save_html(str(model_performance_report_path))
  
     logging.info("Save reference data")
     ref_data_path = Path(config["data"]["reference_data"])

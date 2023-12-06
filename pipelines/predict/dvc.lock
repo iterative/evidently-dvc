@@ -5,8 +5,8 @@ stages:
     deps:
     - path: models/model.joblib
       hash: md5
-      md5: 7efa85b2cd09eddb480a5e38823761db
-      size: 1557905
+      md5: 4504a44c6147932bbfc2c3d12d5063af
+      size: 2324993
     - path: src/stages/predict.py
       hash: md5
       md5: 66d5ec3f9f9e67f5ab2d10e8e183ba8b
@@ -23,8 +23,8 @@ stages:
     outs:
     - path: data/predictions/2011-01-29--2011-02-04.csv
       hash: md5
-      md5: 212c8b75d40dfed6f3353a16ff131c3b
-      size: 12464
+      md5: 5d3e8995f608062bc2eb27b62943f54c
+      size: 13021
   monitoring:
     cmd: python ../../src/stages/monitor_data.py --config=params.yaml
     deps:

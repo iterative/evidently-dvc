@@ -64,12 +64,12 @@ stages:
     deps:
     - path: data/predictions/2011-01-29--2011-02-04.csv
       hash: md5
-      md5: 212c8b75d40dfed6f3353a16ff131c3b
-      size: 12464
+      md5: 5d3e8995f608062bc2eb27b62943f54c
+      size: 13021
     - path: src/stages/monitor_data.py
       hash: md5
-      md5: 5bd11fbb35872ebef23638892cb0a6b9
-      size: 2791
+      md5: 4fc5e55fc806668920448851210c475d
+      size: 2757
     params:
       pipelines/monitor/params.yaml:
         monitoring:
@@ -87,23 +87,23 @@ stages:
     outs:
     - path: reports/2011-01-29--2011-02-04/data_drift.html
       hash: md5
-      md5: b43ccba720a318b55ff52060abac3727
-      size: 3685953
+      md5: 99676a9e2fa394ceb65313b52fad25d7
+      size: 3669242
     - path: reports/2011-01-29--2011-02-04/data_quality.html
       hash: md5
-      md5: 07482b5d690e099879d2fb565c60b8fa
-      size: 3703545
+      md5: 95bbe41bc93a3b4bdb5b763b17c87c87
+      size: 3688190
   monitor_model:
     cmd: python src/stages/monitor_model.py --config=pipelines/monitor/params.yaml
     deps:
     - path: data/predictions/2011-01-29--2011-02-04.csv
       hash: md5
-      md5: 212c8b75d40dfed6f3353a16ff131c3b
-      size: 12464
+      md5: 5d3e8995f608062bc2eb27b62943f54c
+      size: 13021
     - path: src/stages/monitor_model.py
       hash: md5
-      md5: c611a6357e29177aa9f5444100a22763
-      size: 3112
+      md5: 979188cb7dab8f86db051196f341ed08
+      size: 3078
     params:
       pipelines/monitor/params.yaml:
         monitoring:
@@ -121,9 +121,9 @@ stages:
     outs:
     - path: reports/2011-01-29--2011-02-04/model_performance.html
       hash: md5
-      md5: d316ed63d84b4422ee498965bed07ed0
-      size: 3745623
+      md5: 8e610b33eb439da0d4725c3182f8d0e3
+      size: 3738731
     - path: reports/2011-01-29--2011-02-04/target_drift.html
       hash: md5
-      md5: 81f9661d62bbb378ea29262f3252df26
-      size: 3570957
+      md5: 8e6b3f37b18a18cecf27201a17808cd7
+      size: 3572200
