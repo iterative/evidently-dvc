@@ -86,10 +86,7 @@ def evaluate(config_path: Text, pdir: Text) -> None:
     selected_metrics = {k: regression_metrics.get(k) for k in metric_names} 
     
     logging.info("Save evaluation metrics and model report")
-    with Live(dir=str(REPORTS_DIR), 
-            #   save_dvc_exp=False, 
-              dvcyaml=f"{pdir}/dvc.yaml",) as live:
-
+    with Live(dir=str(REPORTS_DIR), dvcyaml=f"{pdir}/dvc.yaml",) as live:
         [live.log_metric(k, v, plot=False) for k,v in selected_metrics.items()]
  
     logging.info("Save reference data")
